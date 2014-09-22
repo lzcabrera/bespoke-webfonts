@@ -12,55 +12,191 @@ html
     article
 
       section
-        h1 Fast Loading Webfonts
+        h1 Fast Loading Web fonts
 
-      section
-        h2 Keyboard Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
-
-      section
-        h2 Touch Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
-
-      section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
-
-      section
-        h2 Bullet List
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
+      section(data-bespoke-hash='outline')
+        h2.bullet Outline
         ul
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
+          li Why Web fonts make the web better?
+          li What is a Web font?
+          li Stats
+          li WOFF 1.0
+          li WOFF 2.0
 
       section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
-        pre
-          code.language-css.
-            @font-face{}
+        h2 Why talk about Web fonts?
+        ul
+          li Won a ticket to go to <a href="http://velocityconf.com/velocity2014">Velocity 2014</a> via the <a href="http://davidwalsh.name/">David Walsh Blog</a>
+          li One of my favourite talks was <a href="https://docs.google.com/a/funnelcity.com/presentation/d/10QJ_GABjwzfwUb5DZ3DULdv82k74QdPArkovYJZ-glc/present#slide=id.p19">Making Web Fonts Fast(er)</a> by <a href="https://twitter.com/igrigorik">@igrigorik</a>
 
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
+      section
+        h2.bullet What is a Web font?
+        ul
+          li Glyph = vector shape
+          li Font = collection of glyphs
+          li Font variants (bold, italic, condensed, etc.)
+          li Font file size determined by
+            ul
+              li Complexity of the glyphs
+              li Number of glyphs
+
+      section
+        h2.bullet Why Web fonts make the web better?
+        ul
+          li Accessible
+          li Easier to read
+          li Copy + Paste
+          li SEO friendly
+          li Zoom in and out
+          li Beautiful
 
       section(data-bespoke-state='emphatic')
-        h2 Emphatic Slide!
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-state">bespoke-state</a>
+        h2 Most mobile devices ship with only one system font
+        h3 Web fonts are here to stay!
 
       section
-        h2.bullet Just the beginning...
-        br
+        h2 Interesting Statistics
+        h3 According to HTTP archive
         ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
-        br
+          li 35% of the <a href="http://httparchive.org/urls.php?start=1&end=10000">Alexa's</a> TOP 1000 web sites are using web fonts on their homepage
+          li 62% when we look beyond the homepage of these websites
+
+
+      section
+        h2 Interesting Statistics
+        div.normal-image
+          <img src="images/webfont-trend.png">
         ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+          li This <a href="http://httparchive.org/trends.php#perFonts">chart</a> shows the percentage of sites that make at least one request for a custom font (Sep 2013-2014)
+          li Over 230% growth in one year
+          li Check out <a href="https://www.google.com/fonts#Analytics:total">Google fonts usage</a> real-time data
+
+
+      section
+        h2 Web fonts in Browsers
+        ul
+          li Impacts user experience
+          li IE renders immediately with fallback and re-renders when font is available
+          li Firefox blocks text rendering for up to 3s and uses fallback if timeout is reached
+          li Chrome M35+ recently added a 3 second timeout
+          li Older versions of Chrome and Safari block text rendering indefinitely
+
+
+      section
+        h1.bullet WOFF 1.0
+        ul
+          li Web Open Font Format
+          li Supported by <a href="http://caniuse.com/#search=woff" target="_blank">"all"</a> browsers
+
+      section
+        h1.bullet WOFF 2.0
+        ul
+          li Font compression format announced in April 2012 after a year or so of exploration
+          li Faster decompression speed and lower memory requirements
+          li Bleeding edge &rarr; <a href="http://caniuse.com/#search=woff2">limited support</a>
+
+        <blockquote class="twitter-tweet" lang="en"><p>Chrome 36 and Opera 23 (both stable) already support WOFF2 web fonts: <a href="http://t.co/RN1wVrv63B">http://t.co/RN1wVrv63B</a> Convert your web fonts to improve performance.</p>&mdash; Mathias Bynens (@mathias) <a href="https://twitter.com/mathias/status/501721357785522176">August 19, 2014</a></blockquote>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      section
+        h2 Why use WOFF2?
+        ul
+          li It offers a 30% average gain over WOFF 1.0 (measured using Google Fonts corpus)
+          li Gain was more impressive for Asian fonts where 50%+ improvements was noticed
+
+      section
+        h2.bullet What about TELUS?
+        ul
+          li WOFF 2.0 offers a 22.9% average gain over WOFF 1.0
+          li Shave off 72 KB on initial page load
+
+      section
+        h2 TELUS web fonts
+        table
+          tr
+            th font-family
+            th woff
+            th woff2
+            th performance<br/>improvement
+          tr
+            td telusdings-regular
+            td 26 KB
+            td 21 KB
+            td 19%
+          tr
+            td tultralightregular
+            td 74 KB
+            td 58 KB
+            td 22%
+          tr
+            td tthinregular<br/>tultralightregular (bold)
+            td 61 KB
+            td 46 KB
+            td 24.59%
+          tr
+            td tlightregular<br/>tthinregular (bold)
+            td 58 KB
+            td 44 KB
+            td 24.14%
+          tr
+            td tromanregular<br/>tlightregular (bold)
+            td 49 KB
+            td 37 KB
+            td 24.49%
+          tr
+            td tromanregular (bold)
+            td 43 KB
+            td 33 KB
+            td 23.26%
+
+      section(data-bespoke-state='emphatic')
+        h1.bullet Are we using WOFF 2.0?
+        ul
+          li .woff2 already on static.telus.com
+          li Not consumed by any of the sites yet
+
+
+      section
+        h2 What's needed?
+            pre
+              code.language-css.
+                @font-face {
+                  font-family: "Dings";
+                  src: url(//path-to-file/dings.woff2) format('woff2'),
+                       url(//path-to-file/dings.woff) format('woff'),
+                       url(//path-to-file/dings.ttf) format(ttf'),
+                       url(//path-to-file/dings.svg) format(svg'),
+                       url(//path-to-file/dings.eot) format(eot')
+                }
+
+      section
+        h2 How to generate .woff2 files?
+        pre
+          code.language-css.
+            $ git clone https://code.google.com/p/font-compression-reference/
+
+            $ cd font-compression-reference/woff2
+            $ make clean all
+
+            $ ./woff2_compress telusdings.ttf
+
+         <a href="https://code.google.com/p/font-compression-reference/wiki/gathering_compression_improvement_numbers">More info &raquo;</a>
+
+      section
+        h2.bullet TL;DR
+        ul
+
+          li Web fonts popularity is going through the roof
+          li Web fonts enhance the user experience but be selective when choosing fonts for a website
+            ul
+              li Reduce number of fonts and fonts variants
+          li Optimize font delivery
+            ul
+              li Serve relevant characters only using the latest compression formats available
+
+
+      section(data-bespoke-state='emphatic')
+        h2 Questions?
+
 
     script(src='build/build.js')
