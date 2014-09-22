@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Fast Loading Webfonts</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Fast Loading Web fonts</h1>
+      </section>
+      <section data-bespoke-hash="outline">
+        <h2 class="bullet">Outline</h2>
+        <ul>
+          <li>Why Web fonts make the web better?</li>
+          <li>What is a Web font?</li>
+          <li>Stats</li>
+          <li>WOFF 1.0</li>
+          <li>WOFF 2.0</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Why talk about Web fonts?</h2>
+        <ul>
+          <li>Won a ticket to go to <a href="http://velocityconf.com/velocity2014">Velocity 2014</a> via the <a href="http://davidwalsh.name/">David Walsh Blog</a></li>
+          <li>One of my favourite talks was <a href="https://docs.google.com/a/funnelcity.com/presentation/d/10QJ_GABjwzfwUb5DZ3DULdv82k74QdPArkovYJZ-glc/present#slide=id.p19">Making Web Fonts Fast(er)</a> by <a href="https://twitter.com/igrigorik">@igrigorik</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">What is a Web font?</h2>
+        <ul>
+          <li>Glyph = vector shape</li>
+          <li>Font = collection of glyphs</li>
+          <li>Font variants (bold, italic, condensed, etc.)</li>
+          <li>Font file size determined by
+            <ul>
+              <li>Complexity of the glyphs</li>
+              <li>Number of glyphs</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">Why Web fonts make the web better?</h2>
+        <ul>
+          <li>Accessible</li>
+          <li>Easier to read</li>
+          <li>Copy + Paste</li>
+          <li>SEO friendly</li>
+          <li>Zoom in and out</li>
+          <li>Beautiful</li>
+        </ul>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>Most mobile devices ship with only one system font</h2>
+        <h3>Web fonts are here to stay!</h3>
+      </section>
+      <section>
+        <h2>Interesting Statistics</h2>
+        <h3>According to HTTP archive</h3>
+        <ul>
+          <li>35% of the <a href="http://httparchive.org/urls.php?start=1&end=10000">Alexa's</a> TOP 1000 web sites are using web fonts on their homepage</li>
+          <li>62% when we look beyond the homepage of these websites</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Interesting Statistics</h2>
+        <div class="normal-image"><img src="images/webfont-trend.png"></div>
+        <ul>
+          <li>This <a href="http://httparchive.org/trends.php#perFonts">chart</a> shows the percentage of sites that make at least one request for a custom font (Sep 2013-2014)</li>
+          <li>Over 230% growth in one year</li>
+          <li>Check out <a href="https://www.google.com/fonts#Analytics:total">Google fonts usage</a> real-time data</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Web fonts in Browsers</h2>
+        <ul>
+          <li>Impacts user experience</li>
+          <li>IE renders immediately with fallback and re-renders when font is available</li>
+          <li>Firefox blocks text rendering for up to 3s and uses fallback if timeout is reached</li>
+          <li>Chrome M35+ recently added a 3 second timeout</li>
+          <li>Older versions of Chrome and Safari block text rendering indefinitely</li>
+        </ul>
+      </section>
+      <section>
+        <h1 class="bullet">WOFF 1.0</h1>
+        <ul>
+          <li>Web Open Font Format</li>
+          <li>Supported by <a href="http://caniuse.com/#search=woff" target="_blank">"all"</a> browsers</li>
+        </ul>
+      </section>
+      <section>
+        <h1 class="bullet">WOFF 2.0</h1>
+        <ul>
+          <li>Font compression format announced in April 2012 after a year or so of exploration</li>
+          <li>Faster decompression speed and lower memory requirements</li>
+          <li>Bleeding edge &rarr; <a href="http://caniuse.com/#search=woff2">limited support</a></li>
+        </ul><blockquote class="twitter-tweet" lang="en"><p>Chrome 36 and Opera 23 (both stable) already support WOFF2 web fonts: <a href="http://t.co/RN1wVrv63B">http://t.co/RN1wVrv63B</a> Convert your web fonts to improve performance.</p>&mdash; Mathias Bynens (@mathias) <a href="https://twitter.com/mathias/status/501721357785522176">August 19, 2014</a></blockquote>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </section>
+      <section>
+        <h2>Why use WOFF2?</h2>
+        <ul>
+          <li>It offers a 30% average gain over WOFF 1.0 (measured using Google Fonts corpus)</li>
+          <li>Gain was more impressive for Asian fonts where 50%+ improvements was noticed</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="bullet">What about TELUS?</h2>
+        <ul>
+          <li>WOFF 2.0 offers a 22.9% average gain over WOFF 1.0</li>
+          <li>Shave off 72 KB on initial page load</li>
+        </ul>
+      </section>
+      <section>
+        <h2>TELUS web fonts</h2>
+        <table>
+          <tr>
+            <th>font-family</th>
+            <th>woff</th>
+            <th>woff2</th>
+            <th>performance<br/>improvement</th>
+          </tr>
+          <tr>
+            <td>telusdings-regular</td>
+            <td>26 KB</td>
+            <td>21 KB</td>
+            <td>19%</td>
+          </tr>
+          <tr>
+            <td>tultralightregular</td>
+            <td>74 KB</td>
+            <td>58 KB</td>
+            <td>22%</td>
+          </tr>
+          <tr>
+            <td>tthinregular<br/>tultralightregular (bold)</td>
+            <td>61 KB</td>
+            <td>46 KB</td>
+            <td>24.59%</td>
+          </tr>
+          <tr>
+            <td>tlightregular<br/>tthinregular (bold)</td>
+            <td>58 KB</td>
+            <td>44 KB</td>
+            <td>24.14%</td>
+          </tr>
+          <tr>
+            <td>tromanregular<br/>tlightregular (bold)</td>
+            <td>49 KB</td>
+            <td>37 KB</td>
+            <td>24.49%</td>
+          </tr>
+          <tr>
+            <td>tromanregular (bold)</td>
+            <td>43 KB</td>
+            <td>33 KB</td>
+            <td>23.26%</td>
+          </tr>
+        </table>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h1 class="bullet">Are we using WOFF 2.0?</h1>
+        <ul>
+          <li>.woff2 already on static.telus.com</li>
+          <li>Not consumed by any of the sites yet</li>
+        </ul>
+      </section>
+      <section>
+        <h2>What's needed?
+          <pre><code class="language-css">@font-face {
+  font-family: "Dings";
+  src: url(//path-to-file/dings.woff2) format('woff2'),
+       url(//path-to-file/dings.woff) format('woff'),
+       url(//path-to-file/dings.ttf) format(ttf'),
+       url(//path-to-file/dings.svg) format(svg'),
+       url(//path-to-file/dings.eot) format(eot')
+}
+</code></pre>
+        </h2>
+      </section>
+      <section>
+        <h2>How to generate .woff2 files?</h2>
+        <pre><code class="language-css">$ git clone https://code.google.com/p/font-compression-reference/
+
+$ cd font-compression-reference/woff2
+$ make clean all
+
+$ ./woff2_compress telusdings.ttf
+</code></pre><a href="https://code.google.com/p/font-compression-reference/wiki/gathering_compression_improvement_numbers">More info &raquo;</a>
+      </section>
+      <section>
+        <h2 class="bullet">TL;DR</h2>
+        <ul>
+          <li>Web fonts popularity is going through the roof</li>
+          <li>Web fonts enhance the user experience but be selective when choosing fonts for a website
+            <ul>
+              <li>Reduce number of fonts and fonts variants</li>
+            </ul>
+          </li>
+          <li>Optimize font delivery
+            <ul>
+              <li>Serve relevant characters only using the latest compression formats available</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section data-bespoke-state="emphatic">
+        <h2>Questions?</h2>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
